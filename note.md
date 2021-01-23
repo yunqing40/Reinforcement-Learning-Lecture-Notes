@@ -33,7 +33,7 @@ A reward is a scalar feedback signal that indicates how well agent is doing at s
 
 Select actions to maximize total future reward.
 
-May sacrifice immediate reward to gain more long term reward. 考虑最大化未来累积奖励而不是即时奖励
+May sacrifice immediate reward to gain more long term reward. 考虑最大化未来累积奖励而不是即时奖励。
 
 
 
