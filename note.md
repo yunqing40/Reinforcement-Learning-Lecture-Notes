@@ -29,11 +29,10 @@ A reward is a scalar feedback signal that indicates how well agent is doing at s
 
 **\[Def\] Reward Hypothesis** All goals can be described by the maximization of expected cumulative reward.
 
- 
+* **Goal**
 
+Select actions to maximize total future reward
 
-
-* 
 
 
 
