@@ -25,9 +25,7 @@ ML includes Supervised Learning, Unsupervised Learning and RL
 
 * **Reward \(R\_t\)**
 
-A reward is a scalar feedback signal that indicates how well agent is doing at step t.
-
-**\[Def\] Reward Hypothesis** All goals can be described by the maximization of expected cumulative reward.
+A reward is a scalar feedback signal that indicates how well agent is doing at step t. &lt;/n&gt; \[Def\] Reward Hypothesis All goals can be described by the maximization of expected cumulative reward.
 
  
 
