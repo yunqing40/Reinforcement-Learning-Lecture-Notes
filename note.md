@@ -6,7 +6,9 @@ description: >-
 
 # Lecture 01 Introduction to Reinforcement Learning
 
-## 1. Intersection of different fields
+## 1. Reinforcement Learning \(RL\) Overview
+
+### 1.1 RL in different fields
 
 * Machine Learning in Computer Science
 * Reward System in Neuroscience
@@ -14,6 +16,37 @@ description: >-
 * Bounded Rationality in Economics
 * Operations Research in Mathematics
 * Optimal Control in Engineering
+
+### 1.2 Relationship between RL and Machine Learning \(ML\)
+
+ML includes Supervised Learning, Unsupervised Learning and RL
+
+### 1.3 Elements of a RL problem
+
+* **Reward \(R\_t\)**
+
+        A reward is a scalar feedback signal that indicates how well agent is doing at step t.
+
+**\[Def\] Reward Hypothesis** All goals can be described by the maximization of expected cumulative reward.
+
+ 
+
+
+
+* 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## References
 
