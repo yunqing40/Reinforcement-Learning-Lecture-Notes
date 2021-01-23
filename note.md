@@ -6,9 +6,9 @@ description: >-
 
 # Lecture 01 Introduction to Reinforcement Learning
 
-## 1. Reinforcement Learning \(RL\) Overview
+## 1. Reinforcement Learning \(RL\) Background Knowledge 强化学习基本概念
 
-### 1.1 RL in different fields
+### 1.1 RL in different fields 学科交叉与应用
 
 * Machine Learning in Computer Science
 * Reward System in Neuroscience
@@ -17,21 +17,25 @@ description: >-
 * Operations Research in Mathematics
 * Optimal Control in Engineering
 
-### 1.2 Relationship between RL and Machine Learning \(ML\)
+### 1.2 Relationship between RL and Machine Learning \(ML\) 和机器学习的关系
 
 ML includes Supervised Learning, Unsupervised Learning and RL
 
-### 1.3 Elements of a RL problem
+### 1.3 Elements of a RL problem 基本元素
 
-* **Reward \(R\_t\)**
+* **Reward \(R\_t\) 奖励**
 
 A reward is a scalar feedback signal that indicates how well agent is doing at step t. 
 
 **\[Def\] Reward Hypothesis** All goals can be described by the maximization of expected cumulative reward.
 
-* **Goal**
+* **Goal 目标**
 
-Select actions to maximize total future reward
+Select actions to maximize total future reward.
+
+May sacrifice immediate reward to gain more long term reward. 考虑最大化未来累积奖励而不是即时奖励
+
+
 
 
 
