@@ -4,7 +4,7 @@ description: >-
   Silver
 ---
 
-# Reinforcement-Learning-Lecture-Notes
+# Lecture 01 Introduction to Reinforcement Learning
 
 ## References
 
