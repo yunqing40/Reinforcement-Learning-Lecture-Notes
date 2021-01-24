@@ -23,17 +23,35 @@ ML includes Supervised Learning, Unsupervised Learning and RL
 
 ### 1.3 Elements of a RL problem 基本元素
 
-* **Reward \(R\_t\) 奖励**
+* **Input/Output Elements**
 
-A reward is a scalar feedback signal that indicates how well agent is doing at step t. 
+  * **Reward \(R\_t\)**
 
-**\[Def\] Reward Hypothesis** All goals can be described by the maximization of expected cumulative reward.
+  A reward is a scalar feedback signal that indicates how well agent is doing at step t. 
 
-* **Goal 目标**
+  **\[Def\] Reward Hypothesis** All goals can be described by the maximization of expected cumulative reward.
+
+  * **Observation \(O\_t\)**
+  * **Action \(A\_t\)**
+
+  \*\*\*\*
+
+* **Goal**
 
 Select actions to maximize total future reward.
 
-May sacrifice immediate reward to gain more long term reward. 考虑最大化未来累积奖励而不是即时奖励。
+May sacrifice immediate reward to gain more long term reward. 
+
+考虑最大化未来累积奖励而不是即时奖励。
+
+* **Environment**
+* **Agent**
+
+Agent receives observation and reward to take action at each step t.
+
+After taking action, the environment will be updated and will provide the updated reward and observation as inputs to the agent at the next step.
+
+\*\*\*\*
 
 
 
