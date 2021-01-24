@@ -71,6 +71,8 @@ ML includes Supervised Learning, Unsupervised Learning and RL.
 * **Value function** Evaluate how good each state/action is. A prediction of future reward.
   * $$v_\pi(s) = E_\pi (R_t + \gamma R_{t+1} + \gamma^2 R_{t+2} +...|S_t = s)$$ 
 * **Model** Agent's representation of the environment. Predicts what the environment will do next.
+  * Transition P predicts the next state. $$P^a_{ss'} = P(S'=s'|S=s, A=a)$$ 
+  * Reward R predicts the next reward. $$R^a_s = E(R|S=s, A=a)$$ 
 
 
 
