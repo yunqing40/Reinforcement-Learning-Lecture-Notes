@@ -19,7 +19,7 @@ description: >-
 
 ### 1.2 Relationship between RL and Machine Learning \(ML\) 和机器学习的关系
 
-ML includes Supervised Learning, Unsupervised Learning and RL
+ML includes Supervised Learning, Unsupervised Learning and RL.
 
 ### 1.3 Elements of a RL problem 基本元素
 
@@ -34,22 +34,31 @@ ML includes Supervised Learning, Unsupervised Learning and RL
   * **Observation \(O\_t\)**
   * **Action \(A\_t\)**
 
-  \*\*\*\*
+* **主体**
+
+  * **Environment**
+  * **Agent**
+
+  Agent receives observation and reward to take action at each step t.
+
+  After taking action, the environment will be updated and will provide the updated reward and observation as inputs to the agent at the next step.
+
+  在environment和agent之间形成循环。
 
 * **Goal**
+  * Select actions to maximize total future reward.
 
-Select actions to maximize total future reward.
+    May sacrifice immediate reward to gain more long term reward. 
 
-May sacrifice immediate reward to gain more long term reward. 
+    考虑最大化未来累积奖励而不是即时奖励。
+* **State**
+  * History _H\_t = A\_1, O\_1, R\_1, A\_2, O\_2, R\_2, ..., A\_t, O\_t, R\_t_
+  * _S\_t = f\(H\_t\)_
+  * Types of State
+    * Environment state S^e\_t. It's not usually visible to the agent. It may contain irrelevant information. 
+    * Agent state S^a\_t. 
 
-考虑最大化未来累积奖励而不是即时奖励。
 
-* **Environment**
-* **Agent**
-
-Agent receives observation and reward to take action at each step t.
-
-After taking action, the environment will be updated and will provide the updated reward and observation as inputs to the agent at the next step.
 
 \*\*\*\*
 
