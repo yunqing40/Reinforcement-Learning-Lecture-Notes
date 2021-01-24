@@ -49,19 +49,21 @@ ML includes Supervised Learning, Unsupervised Learning and RL.
     May sacrifice immediate reward to gain more long term reward. 
 
     考虑最大化未来累积奖励而不是即时奖励。
-* **State**
-  * History $$H_t = A_1, O_1, R_1, A_2, O_2, R_2, ..., A_t, O_t, R_t$$ 
-  * \_\_$$S_t = f(H_t)$$ __
-  * Types of States
-    * Environment state $$S^e_t$$ . It's not usually visible to the agent. It may contain irrelevant information. 
-    * Agent state $$S^a_t$$ . It's the information used by RL algorithm.
 
-      **\[Def\] Markov State** A state $$S_t$$ is Markov if and only if $$P(S_{t+1}|S_t) = P(S_{t+1}|S_1,S_2,...,S_t)$$. 马尔科夫链无记忆性。
-  * Observability
-    * Full Observability $$O_t = S^e_t = S^a_t$$ --&gt; Markov decision process \(MDP\)
-    * Partial Observability $$S^e_t \ne S^a_t$$ --&gt; partially observable Markov decision process \(POMDP\) 这里估计 $$S^a_t$$ 可以假设观测 $$O_t$$ 是完整的，或者假设 $$S^e_t$$ 概率分布，或者用recurrent neural network \(RNN\)  $$\sigma (W_tO_t+W_sS^a_{t-1})$$ 估计等等。
+### **1.4 State**
 
-### 1.4 Major Components of RL Agent
+* History $$H_t = A_1, O_1, R_1, A_2, O_2, R_2, ..., A_t, O_t, R_t$$ 
+* \_\_$$S_t = f(H_t)$$ __
+* Types of States
+  * Environment state $$S^e_t$$ . It's not usually visible to the agent. It may contain irrelevant information. 
+  * Agent state $$S^a_t$$ . It's the information used by RL algorithm.
+
+    **\[Def\] Markov State** A state $$S_t$$ is Markov if and only if $$P(S_{t+1}|S_t) = P(S_{t+1}|S_1,S_2,...,S_t)$$. 马尔科夫链无记忆性。
+* Observability
+  * Full Observability $$O_t = S^e_t = S^a_t$$ --&gt; Markov decision process \(MDP\)
+  * Partial Observability $$S^e_t \ne S^a_t$$ --&gt; partially observable Markov decision process \(POMDP\) 这里估计 $$S^a_t$$ 可以假设观测 $$O_t$$ 是完整的，或者假设 $$S^e_t$$ 概率分布，或者用recurrent neural network \(RNN\)  $$\sigma (W_tO_t+W_sS^a_{t-1})$$ 估计等等。
+
+### 1.5 Major Components of RL Agent
 
 * **Policy** Agent's behavior function. A map from state to action. 
   * Deterministic policy $$\pi (s) = a$$ 
@@ -72,17 +74,17 @@ ML includes Supervised Learning, Unsupervised Learning and RL.
   * Transition P predicts the next state. $$P^a_{ss'} = P(S'=s'|S=s, A=a)$$ 
   * Reward R predicts the next reward. $$R^a_s = E(R|S=s, A=a)$$ 
 
-### 1.5 Categories of RL Agent
+### 1.6 Categories of RL Agent
 
-* \*\*\*\*
-  * **Value Based**
-  * **Policy Based**
-  * **Actor Critic**
-* \*\*\*\*
-  * **Model Free**
-  * **Model Based**
+* **用哪些components**
+  * Value Based
+  * Policy Based
+  * Actor Critic
+* **使不使用模型**
+  * Model Free
+  * Model Based
 
-### 1.6 Fundamental Problems
+### 1.7 Fundamental Problems
 
 * **RL** The environment is unknown. The agent interacts with the environment to improve the policy.
 * **Planning** The environment is known. The agent performs computations with its model to improve the policy.
