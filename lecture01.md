@@ -63,7 +63,7 @@ ML includes Supervised Learning, Unsupervised Learning and RL.
     * Full Observability $$O_t = S^e_t = S^a_t$$ --&gt; Markov decision process \(MDP\)
     * Partial Observability $$S^e_t \ne S^a_t$$ --&gt; partially observable Markov decision process \(POMDP\) 这里估计 $$S^a_t$$ 可以假设观测 $$O_t$$ 是完整的，或者假设 $$S^e_t$$ 概率分布，或者用recurrent neural network \(RNN\)  $$\sigma (W_tO_t+W_sS^a_{t-1})$$ 估计等等。
 
-### 1.4 Major Components of a RL Agent
+### 1.4 Major Components of RL Agent
 
 * **Policy** Agent's behavior function. A map from state to action. 
   * Deterministic policy $$\pi (s) = a$$ 
@@ -73,6 +73,27 @@ ML includes Supervised Learning, Unsupervised Learning and RL.
 * **Model** Agent's representation of the environment. Predicts what the environment will do next.
   * Transition P predicts the next state. $$P^a_{ss'} = P(S'=s'|S=s, A=a)$$ 
   * Reward R predicts the next reward. $$R^a_s = E(R|S=s, A=a)$$ 
+
+### 1.5 Categories of RL Agent
+
+* \*\*\*\*
+  * **Value Based**
+  * **Policy Based**
+  * **Actor Critic**
+* \*\*\*\*
+  * **Model Free**
+  * **Model Based**
+
+### 1.6 Fundamental Problems
+
+* **RL** The environment is unknown. The agent interacts with the environment to improve the policy.
+* **Planning** The environment is known. The agent performs computations with its model to improve the policy.
+* **Exploration** Finds more information about the environment.
+* **Exploitation** Exploits known information to maximize reward.
+
+
+
+
 
 
 
