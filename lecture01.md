@@ -90,6 +90,8 @@ ML includes Supervised Learning, Unsupervised Learning and RL.
 * **Planning** The environment is known. The agent performs computations with its model to improve the policy.
 * **Exploration** Finds more information about the environment.
 * **Exploitation** Exploits known information to maximize reward.
+* **Prediction** Given a policy to evaluate the future.
+* **Control** Find the best policy to optimize the future.
 
 
 
