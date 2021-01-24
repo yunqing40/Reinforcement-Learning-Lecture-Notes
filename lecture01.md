@@ -25,14 +25,14 @@ ML includes Supervised Learning, Unsupervised Learning and RL.
 
 * **Input/Output Elements**
 
-  * **Reward \(R\_t\)**
+  * **Reward \(** $$R_t$$ **\)**
 
   A reward is a scalar feedback signal that indicates how well agent is doing at step t. 
 
   **\[Def\] Reward Hypothesis** All goals can be described by the maximization of expected cumulative reward.
 
-  * **Observation \(O\_t\)**
-  * **Action \(A\_t\)**
+  * **Observation \(** $$O_t$$ **\)**
+  * **Action \(** $$A_t$$ **\)**
 
 * **主体**
 
@@ -52,11 +52,26 @@ ML includes Supervised Learning, Unsupervised Learning and RL.
 
     考虑最大化未来累积奖励而不是即时奖励。
 * **State**
-  * History _H\_t = A\_1, O\_1, R\_1, A\_2, O\_2, R\_2, ..., A\_t, O\_t, R\_t_
-  * _S\_t = f\(H\_t\)_
-  * Types of State
-    * Environment state S^e\_t. It's not usually visible to the agent. It may contain irrelevant information. 
-    * Agent state S^a\_t. 
+  * History $$H_t = A_1, O_1, R_1, A_2, O_2, R_2, ..., A_t, O_t, R_t$$ 
+  * \_\_$$S_t = f(H_t)$$ __
+  * Types of States
+    * Environment state $$S^e_t$$ . It's not usually visible to the agent. It may contain irrelevant information. 
+    * Agent state $$S^a_t$$ . It's the information used by RL algorithm.
+
+      **\[Def\] Markov State** A state $$S_t$$ is Markov if and only if $$P(S_{t+1}|S_t) = P(S_{t+1}|S_1,S_2,...,S_t)$$. 马尔科夫链无记忆性。
+  * Observability
+    * Full Observability $$O_t = S^e_t = S^a_t$$ --&gt; Markov decision process \(MDP\)
+    * Partial Observability $$S^e_t \ne S^a_t$$ --&gt; partially observable Markov decision process \(POMDP\) 这里估计 $$S^a_t$$ 可以假设观测 $$O_t$$ 是完整的，或者假设 $$S^e_t$$ 概率分布，或者用recurrent neural network \(RNN\)  $$\sigma (W_tO_t+W_sS^a_{t-1})$$ 估计等等。
+
+### 1.4 Major Components of a RL Agent
+
+* **Policy** Agent's behavior function
+* **Value function** Evaluate how good each state/action is
+* **Model** Agent's representation of the environment
+
+
+
+
 
 
 
