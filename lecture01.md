@@ -6,9 +6,7 @@ description: >-
 
 # Lecture 01 Introduction to Reinforcement Learning
 
-## 1. Reinforcement Learning \(RL\) Background Knowledge 强化学习基本概念
-
-### 1.1 RL in different fields 学科交叉与应用
+### 1.1 Reinforcement Learning \(RL\) in different fields 学科交叉与应用
 
 * Machine Learning in Computer Science
 * Reward System in Neuroscience
