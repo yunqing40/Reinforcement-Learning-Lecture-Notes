@@ -65,9 +65,14 @@ ML includes Supervised Learning, Unsupervised Learning and RL.
 
 ### 1.4 Major Components of a RL Agent
 
-* **Policy** Agent's behavior function
-* **Value function** Evaluate how good each state/action is
-* **Model** Agent's representation of the environment
+* **Policy** Agent's behavior function. A map from state to action. 
+  * Deterministic policy $$\pi (s) = a$$ 
+  * Stochastic policy $$\pi (a|s) = P(A=a|S=s)$$ 
+* **Value function** Evaluate how good each state/action is. A prediction of future reward.
+  * $$v_\pi(s) = E_\pi (R_t + \gamma R_{t+1} + \gamma^2 R_{t+2} +...|S_t = s)$$ 
+* **Model** Agent's representation of the environment. Predicts what the environment will do next.
+
+
 
 
 
