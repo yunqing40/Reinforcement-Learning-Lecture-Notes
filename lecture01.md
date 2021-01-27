@@ -39,7 +39,7 @@ ML includes Supervised Learning, Unsupervised Learning and RL.
 
   Agent receives observation and reward to take action at each step t.
 
-  After action taken, the environment will be updated and will provide the updated reward and observation as inputs to the agent at the next step.
+  After action taken, the environment will be updated and it will provide the updated reward and observation as new inputs to the agent for the next step.
 
   在environment和agent之间形成循环。
 
