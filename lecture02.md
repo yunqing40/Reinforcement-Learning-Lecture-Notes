@@ -42,9 +42,12 @@
 * Optimal value function specifies the best possible performance in the MDP. $$v_*(s)=max_\pi v_\pi(s)$$ and $$q_*(s,a)=max_\pi  q_\pi(s,a)$$ 
 * **\[Def\] Partial ordering over policies** $$\pi \ge \pi'$$ , if $$v_\pi(s)\ge v_{\pi'}(s), \forall s$$ .
 * **Theorem** For any MDP,
-  * Exists $$\pi_*$$ such that $$\pi_*\ge \pi, \forall \pi$$ .
+
+  * Exists $$\pi_*$$ such that $$\pi_*\ge \pi, \forall \pi$$ 
   * $$v_*(s) = v_{\pi_*}(s)$$ 
-  * $$q_*(s,a) = q_{\pi_*}(s,a)$$ 
+  * $$q_*(s,a) = q_{\pi_*}(s,a)$$ .
+
+  Optimal
 
 
 
