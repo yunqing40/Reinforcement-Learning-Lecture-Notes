@@ -18,7 +18,7 @@
 
   这里推导用到 $$E(X)=E(E(X|Y))$$ 和马氏链性质
 
-  $$v(s) = E(G_t|S_t=s) = E(R_{t+1}+\gamma R_{t+2}+...|S_t=s) =  E(R_{t+1}+\gamma (R_{t+2}+\gamma R_{t+3}+...)|S_t=s) =E(R_{t+1}+\gamma G_{t+1}|S_t=s) = E(R_{t+1}+\gamma E(G_{t+1}|S_{t+1}=s',S_t=s)|S_t=s) = E(R_{t+1}+\gamma E(G_{t+1}|S_{t+1}=s')|S_t=s) = E(R_{t+1}+\gamma v(s')|S_t=s)$$ 
+  $$v(s) = E(G_t|S_t=s)  \\= E(R_{t+1}+\gamma R_{t+2}+...|S_t=s)  \\=  E(R_{t+1}+\gamma (R_{t+2}+\gamma R_{t+3}+...)|S_t=s)  \\=E(R_{t+1}+\gamma G_{t+1}|S_t=s)  \\= E(R_{t+1}+\gamma E(G_{t+1}|S_{t+1}=s',S_t=s)|S_t=s)   \\= E(R_{t+1}+\gamma E(G_{t+1}|S_{t+1}=s')|S_t=s)  \\= E(R_{t+1}+\gamma v(s')|S_t=s)$$ 
 
 
 
