@@ -3,7 +3,7 @@
 ### 2.1 Introduction to MDP
 
 * Environment is fully observable or assumed to be fully observable \(converting POMDP into MDP\)
-* **Transition Probability** $$P_{ss'} = P(S_{t+1}=s' | P_t = s)$$ 
+* **Transition Probability** $$P_{ss'} = P(S_{t+1}=s' | S_t = s)$$ 
 * **Transition Matrix** $$P = \begin{pmatrix} P_{11},P_{12}, ..., P_{1n} \\ ...\\ P_{n1},P_{n2}, ..., P_{nn}  \end{pmatrix}$$ 每行的概率加和为1
 * **\[Def\] Markov Process** $$(S, P)$$ where S is a finite set of states, and P is a transition matrix.
 
@@ -27,6 +27,8 @@
   * computation complexity is$$O(n^3)$$, where n is the number of states. 对small MRPs 可以采用这种算法. 对large MRPs 可以用dynamic programming, Monte-Carlo evaluation, temporal difference learning.
 
 ### 2.3 Markov Decision Process
+
+* **\[Def\] Markov Decision Process** $$(S, P, A, R, \gamma) $$ where A is a finite set of actions, $$P^a_{ss'} = P(S_{t+1}=s' | S_t = s, A_t=a)$$ and  $$R^a_s = E(R_{t+1} | S_t = s, A_t=a)$$ 
 
 
 
