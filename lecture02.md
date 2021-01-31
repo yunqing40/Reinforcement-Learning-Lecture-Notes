@@ -32,6 +32,7 @@
 * **Policy** is a conditional distribution of actions given the state. $$\pi(a|s) = P(A_t=a | S_t = s)$$. Defines the behaviors of an agent. 
 * 如果我们将action平均化, 这个MDP过程可以转化成MRP过程. $$P^\pi_{ss'} =\sum_{a \in A} \pi(a|s) P^a_{ss'}$$ and $$R^\pi_s =\sum_{a \in A} \pi(a|s) R^a_s$$ 
 * **State-Value** is the expected return starting from state s and then following policy $$\pi$$. $$v_\pi(s)= E_\pi(G_t|S_t=s)$$ 
+* **Action-Value** is the expected return starting from state s taking action a and then following policy $$\pi$$. $$q_\pi(s,a)= E_\pi(G_t|S_t=s, A_t=a)$$ 
 
 
 
