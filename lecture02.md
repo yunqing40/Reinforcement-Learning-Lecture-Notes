@@ -28,7 +28,8 @@
 
 ### 2.3 Markov Decision Process
 
-* **\[Def\] Markov Decision Process** $$(S, P, A, R, \gamma) $$ where A is a finite set of actions, $$P^a_{ss'} = P(S_{t+1}=s' | S_t = s, A_t=a)$$ and  $$R^a_s = E(R_{t+1} | S_t = s, A_t=a)$$ 
+* **\[Def\] Markov Decision Process** $$(S, P, A, R, \gamma) $$ where A is a finite set of actions, $$P^a_{ss'} = P(S_{t+1}=s' | S_t = s, A_t=a)$$ and  $$R^a_s = E(R_{t+1} | S_t = s, A_t=a)$$.
+* **Policy** is a conditional distribution of actions given the state. $$\pi(a|s) = P(A_t=a | S_t = s)$$.
 
 
 
