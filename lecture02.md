@@ -12,8 +12,13 @@
 * **\[Def\] Markov Reward Process** $$(S, P, R, \gamma) $$ where R is a reward function $$R_s = E(R_{t+1}|S_t=s)$$, and $$\gamma \in [0,1]$$is a discount factor.
 * **Return** is the total discounted reward from step t afterwards $$G_t = R_{t+1}+\gamma R_{t+2} + ...$$ 
   * 这里$$G_t$$是其中一个sample样本, 后面我们需要取期望来估计全局.
-  * 这里为什么加入$$\gamma$$? 有多种角度来解释. 首先, 我们相对于未来的reward更倾向于近期reward, 当取值为1时preference of when to reward无差别. If we know all sequences will terminate, we can use undiscounted MRP. 另外, 有$$\gamma$$源于数学运算方便, 避免无限循环, 解释由于对未来的不确定性所作出判断的价值递减, 在金融领域相当于折现率, 等等. _问题:最终这个随机过程是否收敛, 是否平稳stationary? 在什么取值范围内?_
+  * 这里为什么加入$$\gamma$$? 有多种角度来解释. 首先, 我们相对于未来的reward更倾向于近期reward, 当取值为1时preference of when to reward无差别. If we know all sequences will terminate, we can use undiscounted MRP. 另外, 有$$\gamma$$源于数学运算方便, 避免无限循环, 解释由于对未来的不确定性所作出判断的价值递减, 在金融领域相当于折现率, 等等. _问题:最终这个随机过程是否收敛, 是否平稳stationary? 在什么取值范围内满足这种性质?_
 * **Value** is the expected return starting from state s $$v(s)= E(G_t|S_t=s)$$ 
+* **Bellman Equation for MRP**  此处是重点 Bellman方程贯穿整个算法
+
+  这里推导用到 $$E(X)=E(E(X|Y))$$ 和马氏链性质
+
+  $$v(s) = E(G_t|S_t=s) = E(R_{t+1}+\gamma R_{t+2}+...|S_t=s) =  E(R_{t+1}+\gamma (R_{t+2}+\gamma R_{t+3}+...)|S_t=s) =E(R_{t+1}+\gamma G_{t+1}|S_t=s) = E(R_{t+1}+\gamma E(G_{t+1}|S_{t+1}=s',S_t=s)|S_t=s) = E(R_{t+1}+\gamma E(G_{t+1}|S_{t+1}=s')|S_t=s) = E(R_{t+1}+\gamma v(s')|S_t=s)$$ 
 
 
 
