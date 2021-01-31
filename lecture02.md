@@ -46,8 +46,24 @@
   * $$v_*(s) = v_{\pi_*}(s)$$ 
   * $$q_*(s,a) = q_{\pi_*}(s,a)$$ .
 * Finding an optimal policy $$\pi_*(a|s)=1$$, if $$a = argmax_{a \in A} q_*(s,a)$$, otherwise$$\pi_*(a|s)=0$$ .
-* **Bellman Optimal Equation** 
-  *  $$v_*(s)=max_a q_*(s,a)$$ and $$q_*(s,a)=R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}v_*(s')$$ 
+* **Bellman Optimality Equation** 
+  * $$v_*(s)=max_a q_*(s,a)$$ and $$q_*(s,a)=R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}v_*(s')$$
+  *  $$v_*(s)=max_a  (R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}v_*(s'))$$ and $$q_*(s,a)=R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}max_{a'} q_*(s',a')$$ . 推导同理, 不赘述
+* **Solving Bellman Optimality Equation**
+  * non-linear optimization
+  * no closed form solution
+  * many iterative solution methods
+    * value iteration
+    * policy iteration
+    * Q-learning
+    * Sarsa
+
+### 2.5 Others
+
+* 这里的MDP和Bellman方程是简化的问题, 可以通过增加其他参数 或combine多个MDP 或者在目标函数加入risk来修正reward 等等来完善过程.
+* MDP拓展 infinite/continuous MDPs, POMDPs, undiscounted average reward MDPs.
+* 
+
 
 
 
