@@ -62,7 +62,7 @@
 
 * 这里的MDP和Bellman方程是简化的问题, 可以通过增加其他参数 或combine多个MDP 或者在目标函数加入risk来修正reward 等等来完善过程.
 * MDP拓展 infinite/continuous MDPs, POMDPs, undiscounted average reward MDPs.
-* 
+
 
 
 
