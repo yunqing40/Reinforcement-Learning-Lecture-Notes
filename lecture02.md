@@ -15,6 +15,7 @@
   * 这里$$G_t$$是其中一个sample样本, 后面我们需要取期望来估计全局.
   * 为什么加入$$\gamma$$? 有多种角度来解释. 首先, 我们相对于未来的reward更倾向于近期即得的reward, 当取值为1时preference of when to reward无差别. If we know all sequences will terminate, we can use undiscounted MRP. 另外, 使用$$\gamma$$源于数学运算方便, 避免无限循环, 解释由于对未来的不确定性所作出判断的价值递减, 在金融领域相当于折现率, 等等. _问题:最终这个随机过程是否收敛, 是否平稳stationary? 在什么取值范围内满足这种性质?_
 * **Value** is the expected return starting from state s $$v(s)= E(G_t|S_t=s)$$ 
+  * 这里的value只与一阶state有关,  后面会将算法复杂化加入action/policy等等.
 * **Bellman Equation for MRP**  此处是重点 Bellman方程贯穿整个算法
 
   这里推导用到 $$E(X)=E(E(X|Y))$$ 和马氏链性质
@@ -22,7 +23,6 @@
   $$v(s) = E(G_t|S_t=s)  \\= E(R_{t+1}+\gamma R_{t+2}+...|S_t=s)  \\=  E(R_{t+1}+\gamma (R_{t+2}+\gamma R_{t+3}+...)|S_t=s)  \\=E(R_{t+1}+\gamma G_{t+1}|S_t=s)  \\= E(R_{t+1}+\gamma E(G_{t+1}|S_{t+1}=s',S_t=s)|S_t=s)   \\= E(R_{t+1}+\gamma E(G_{t+1}|S_{t+1}=s')|S_t=s)  \\= E(R_{t+1}+\gamma v(s')|S_t=s)$$ 
 
   * 这个公式可以简单理解为 当前状态下的value等于即时reward的平均值 加上下一个状态的value的平均值的折现.
-  * 这里的value只与一阶state有关,  后面会将算法复杂化加入action/policy等等.
   * 用矩阵向量表示 $$v = R+\gamma Pv \Rightarrow v=(I-\gamma P)^{-1}R$$ 
   * computation complexity is$$O(n^3)$$, where n is the number of states. 对small MRPs 可以采用这种算法. 对large MRPs 可以用dynamic programming, Monte-Carlo evaluation, temporal difference learning.
 
@@ -39,7 +39,12 @@
 
 ### 2.4 Optimal Value Function
 
-
+* Optimal value function specifies the best possible performance in the MDP. $$v_*(s)=max_\pi v_\pi(s)$$ and $$q_*(s,a)=max_\pi  q_\pi(s,a)$$ 
+* **\[Def\] Partial ordering over policies** $$\pi \ge \pi'$$ , if $$v_\pi(s)\ge v_{\pi'}(s), \forall s$$ .
+* **Theorem** For any MDP,
+  * Exists $$\pi_*$$ such that $$\pi_*\ge \pi, \forall \pi$$ .
+  * $$v_*(s) = v_{\pi_*}(s)$$ 
+  * $$q_*(s,a) = q_{\pi_*}(s,a)$$ 
 
 
 
