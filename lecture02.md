@@ -35,6 +35,9 @@
 * **Action-Value** is the expected return starting from state s, taking action a, and then following policy $$\pi$$. $$q_\pi(s,a)= E_\pi(G_t|S_t=s, A_t=a)$$ 评估行为好坏
 * **Bellman Equation** $$v_\pi(s)=E_\pi(R_{t+1}+\gamma v_\pi(s')|S_t=s)$$ and $$q_\pi(s,a)=E_\pi(R_{t+1}+\gamma q_\pi(s',a')|S_t=s,A_t=a)$$ .
   * v和q之间的关系 $$v_\pi(s)=\sum_{a \in A} \pi(a|s) q_\pi(s,a)$$ and $$q_\pi(s,a)=R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}v_\pi(s')$$ . Then, we have $$v_\pi(s)=\sum_{a \in A} \pi(a|s) (R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}v_\pi(s'))$$ 从state s 到action a 再到state s' 的过程 and $$q_\pi(s,a)=R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}(\sum_{a' \in A} \pi(a'|s') q_\pi(s',a'))$$ 从action a 到state s' 再到action a'的过程.
+  * 矩阵向量化表示  $$v_\pi = R_\pi+\gamma P^\pi v_\pi \Rightarrow v_\pi=(I-\gamma P^\pi)^{-1}R_\pi$$ 
+
+### 2.4 Optimal Value Function
 
 
 
