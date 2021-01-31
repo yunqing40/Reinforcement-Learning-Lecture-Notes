@@ -26,7 +26,10 @@
   * 用矩阵向量表示 $$v = R+\gamma Pv \Rightarrow v=(I-\gamma P)^{-1}R$$ 
   * computation complexity is$$O(n^3)$$, where n is the number of states. 对small MRPs 可以采用这种算法. 对large MRPs 可以用dynamic programming, Monte-Carlo evaluation, temporal difference learning.
 
-* 
+### 2.3 Markov Decision Process
+
+
+
 
 
 
