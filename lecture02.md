@@ -10,8 +10,8 @@
 ### 2.2 Markov Reward Process
 
 * **\[Def\] Markov Reward Process** $$(S, P, R, \gamma) $$ where R is a reward function $$R_s = E(R_{t+1}|S_t=s)$$, and $$\gamma \in [0,1]$$is a discount factor.
-* **Return** is the total discounted reward from step t $$G_t = R_{t+1}+R_{t+2} + ...$$ 这里为什么加入discount factor? 我们相对于未来的reward更倾向于近期reward, 当取值为1时preference of when to reward无差别. 另外, 有 $$\gamma$$ 源于数学运算方便, 避免无限循环, 解释由于对未来的不确定性所作出判断的价值递减, 在金融领域相当于折现率. If we know all sequences will terminate, we can use undiscounted MRP.     _问题:是否收敛, 是否稳定? 在什么取值范围内?_
-* \_\_
+* **Return** is the total discounted reward from step t afterwards $$G_t = R_{t+1}+\gamma R_{t+2} + ...$$ 这里为什么加入discount factor? 我们相对于未来的reward更倾向于近期reward, 当取值为1时preference of when to reward无差别. 另外, 有 $$\gamma$$ 源于数学运算方便, 避免无限循环, 解释由于对未来的不确定性所作出判断的价值递减, 在金融领域相当于折现率. If we know all sequences will terminate, we can use undiscounted MRP.     _问题:是否收敛, 是否稳定? 在什么取值范围内?_
+* **Value** is the expected return starting from state s $$v(s)= E(G_t|S_t=s)$$ 
 
 
 
