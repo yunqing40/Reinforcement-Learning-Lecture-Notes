@@ -6,5 +6,5 @@ description: >-
 
 # Reinforcement Learning Lecture Notes
 
-加油啊! 个人学习笔记 如有错误 烦请指正
+加油啊!
 
