@@ -33,7 +33,8 @@
 * 如果我们将action平均化, 这个MDP过程可以转化成MRP过程. $$P^\pi_{ss'} =\sum_{a \in A} \pi(a|s) P^a_{ss'}$$ and $$R^\pi_s =\sum_{a \in A} \pi(a|s) R^a_s$$ 
 * **State-Value** is the expected return starting from state s, and then following policy $$\pi$$. $$v_\pi(s)= E_\pi(G_t|S_t=s)$$ 评估状态好坏
 * **Action-Value** is the expected return starting from state s, taking action a, and then following policy $$\pi$$. $$q_\pi(s,a)= E_\pi(G_t|S_t=s, A_t=a)$$ 评估行为好坏
-* **Bellman Equation** $$v_\pi(s)=E_\pi(R_{t+1}+\gamma v_\pi(s')|S_t=s)$$ and $$q_\pi(s,a)=E_\pi(R_{t+1}+\gamma q_\pi(s',a')|S_t=s,A_t=a)$$ 
+* **Bellman Equation** $$v_\pi(s)=E_\pi(R_{t+1}+\gamma v_\pi(s')|S_t=s)$$ and $$q_\pi(s,a)=E_\pi(R_{t+1}+\gamma q_\pi(s',a')|S_t=s,A_t=a)$$ .
+  * v和q之间的关系 $$v_\pi(s)=\sum_{a \in A} \pi(a|s) q_\pi(s,a)$$ and $$q_\pi(s,a)=R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}v_\pi(s')$$ .
 
 
 
