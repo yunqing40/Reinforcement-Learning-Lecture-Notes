@@ -23,7 +23,7 @@
   $$v(s) = E(G_t|S_t=s)  \\= E(R_{t+1}+\gamma R_{t+2}+...|S_t=s)  \\=  E(R_{t+1}+\gamma (R_{t+2}+\gamma R_{t+3}+...)|S_t=s)  \\=E(R_{t+1}+\gamma G_{t+1}|S_t=s)  \\= E(R_{t+1}+\gamma E(G_{t+1}|S_{t+1}=s',S_t=s)|S_t=s)   \\= E(R_{t+1}+\gamma E(G_{t+1}|S_{t+1}=s')|S_t=s)  \\= E(R_{t+1}+\gamma v(s')|S_t=s)$$ 
 
   * 这个公式可以简单理解为 当前状态下的value等于即时reward的平均值 加上下一个状态的value的平均值的折现.
-  * 用矩阵向量表示 $$v = R+\gamma Pv \Rightarrow v=(I-\gamma P)^{-1}R$$ 
+  * 用矩阵向量表示 $$v = R+\gamma Pv \implies v=(I-\gamma P)^{-1}R$$ 
   * computation complexity is$$O(n^3)$$, where n is the number of states. 对small MRPs 可以采用这种算法. 对large MRPs 可以用dynamic programming, Monte-Carlo evaluation, temporal difference learning.
 
 ### 2.3 Markov Decision Process
@@ -34,8 +34,8 @@
 * **State-Value** is the expected return starting from state s, and then following policy $$\pi$$. $$v_\pi(s)= E_\pi(G_t|S_t=s)$$ 评估状态好坏
 * **Action-Value** is the expected return starting from state s, taking action a, and then following policy $$\pi$$. $$q_\pi(s,a)= E_\pi(G_t|S_t=s, A_t=a)$$ 评估行为好坏
 * **Bellman Equation for MDP** $$v_\pi(s)=E_\pi(R_{t+1}+\gamma v_\pi(s')|S_t=s)$$ and $$q_\pi(s,a)=E_\pi(R_{t+1}+\gamma q_\pi(s',a')|S_t=s,A_t=a)$$ .
-  * v和q之间的关系 $$v_\pi(s)=\sum_{a \in A} \pi(a|s) q_\pi(s,a)$$ and $$q_\pi(s,a)=R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}v_\pi(s')$$ . Then, we have $$v_\pi(s)=\sum_{a \in A} \pi(a|s) (R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}v_\pi(s'))$$ 从state s 到action a 再到state s' 的过程 and $$q_\pi(s,a)=R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}(\sum_{a' \in A} \pi(a'|s') q_\pi(s',a'))$$ 从action a 到state s' 再到action a'的过程.
-  * 矩阵向量化表示  $$v_\pi = R_\pi+\gamma P^\pi v_\pi \Rightarrow v_\pi=(I-\gamma P^\pi)^{-1}R_\pi$$ 
+  * v和q之间的关系 $$v_\pi(s)=\sum_{a \in A} \pi(a|s) q_\pi(s,a)$$ and $$q_\pi(s,a)=R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}v_\pi(s')$$ . Then, we have $$v_\pi(s)=\sum_{a \in A} \pi(a|s) (R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}v_\pi(s'))$$ 从state s 到action a 再到state s' 的过程 and $$q_\pi(s,a)=R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}(\sum_{a' \in A} \pi(a'|s') q_\pi(s',a'))$$ 从action a 到state s' 再到action a' 的过程.
+  * 矩阵向量化表示  $$v_\pi = R_\pi+\gamma P^\pi v_\pi \implies v_\pi=(I-\gamma P^\pi)^{-1}R_\pi$$ 
 
 ### 2.4 Optimal Value Function
 
