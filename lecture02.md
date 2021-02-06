@@ -1,6 +1,6 @@
 # Lecture 02 Markov Decision Processes
 
-### 2.1 Introduction to MDP
+### 2.1 Introduction to MP
 
 * Environment is fully observable or assumed to be fully observable \(converting POMDP into MDP\)
 * **Transition Probability** $$P_{ss'} = P(S_{t+1}=s' | S_t = s)$$ 
