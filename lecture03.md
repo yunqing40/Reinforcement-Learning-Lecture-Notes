@@ -27,15 +27,25 @@
 ### 3.3 Policy Iteration
 
 * Given a policy $$\pi$$,  evaluate the policy $$v_\pi (s) = E(R_{t+1}+\gamma R_{t+2}+...|S_t=s)$$ and improve the policy by acting greedily with respect to $$v_\pi$$,  $$\pi'=greedy(v_\pi)$$. Do iteration and it always converges to the optimal policy $$\pi^*$$.
-* **\[Proof\]** Consider a deterministic policy $$\pi(s)$$.
+* **\[Proof\]** 1. Consider a deterministic policy $$\pi(s)$$.
 
-  Improve the policy by acting greedily, $$\pi' (s) =argmax_{a \in A} q_\pi (s,a)$$ .
+  2. Improve the policy by acting greedily, $$\pi' (s) =argmax_{a \in A} q_\pi (s,a)$$ .
 
-  This improves the value from any state s over one step, $$q_\pi(s,\pi'(s)) = max_{a \in A} q_\pi (s,a) \ge q_\pi(s,\pi(s)) = v_\pi(s)$$. 这里只更新一步policy，后面的步骤维持原deterministic policy不变.
+  3. This improves the value from any state s over one step, $$q_\pi(s,\pi'(s)) = max_{a \in A} q_\pi (s,a) \ge q_\pi(s,\pi(s)) = v_\pi(s)$$. 这里只更新一步policy，后面的步骤维持原deterministic policy不变.
 
-  Therefore, improves the value function $$v_{\pi'}(s) \ge v_\pi(s)$$.
+  4. Therefore, improves the value function $$v_{\pi'}(s) \ge v_\pi(s)$$.
 
   $$v_\pi(s) \le q_\pi(s,\pi'(s)) = E_{\pi'}(R_{t+1}+\gamma v_\pi(S_{t+1})|S_t=s)\\ \le E_{\pi'}(R_{t+1}+\gamma q_\pi(S_{t+1},\pi'(S_{t+1}))|S_t=s)\\ \le E_{\pi'}(R_{t+1}+\gamma R_{t+2} + \gamma^2 q_\pi(S_{t+2},\pi'(S_{t+2}))|S_t=s)\\ ... \\ \le  E_{\pi'}(R_{t+1}+\gamma R_{t+2}+...|S_t=s) = v_{\pi'}(s)$$ 
+
+  5. If the improvements stop, according to Bellman optimality equation, we get the optimal policy.
+
+* How to stop the iteration?
+  * 定义$$\epsilon$$convergence of value function 收敛threshold
+  * 定义最多K步 \(e.g. K=1时 policy iteration同value iteration\)
+
+### 3.4 Value Iteration
+
+
 
 
 
