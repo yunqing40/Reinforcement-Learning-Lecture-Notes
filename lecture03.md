@@ -21,13 +21,15 @@
 
 * **Problem**: Evaluate a given policy; **Solution**: iterative application of Bellman equation backup.
 * **Synchronous** backups: at each iteration k+1, for all $$s \in S$$, update $$v_{k+1}(s)$$ from $$v_k(s')$$, where s' is a successor state of s.
-* Bellman equation: $$v_{k+1}(s)=\sum_{a \in A} \pi(a|s) (R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}v_k(s'))$$ or $$v_{k+1} = R_\pi+\gamma P^\pi v_k$$.   从state s 到action a再到第k步的state s'. 迭代更新成第k+1步的state s. 从后往前推 ??
+* Bellman equation: $$v_{k+1}(s)=\sum_{a \in A} \pi(a|s) (R^a_s+\gamma \sum_{s' \in S} P^a_{ss'}v_k(s'))$$ or $$v_{k+1} = R_\pi+\gamma P^\pi v_k$$.   从state s 到action a再到第k步的state s'. 迭代更新成第k+1步的state s. 从后往前推! 理论上，循环结果与初始值无关。那么假设从终点反推，和从任意状态回推经过足够多次循环都可以得到最优解，区别在于寻找速度和循环次数。
 
 ### 3.3 Policy Iteration
 
-* Example: Small Grid-world using Random policy \(取所有路径产生value的期望，迭代到收敛 _问题: 如何定义收敛？证明收敛？_\) v.s. Greedy policy \(根据random policy每步结果只选择每个state的最优路径到收敛  _问题: 会不会陷入局部最优解？_\).
+* Example: Small Grid-world using Random policy \(取所有路径产生value的期望，迭代到收敛\) v.s. Greedy policy \(根据random policy每步结果只选择每个state的最优路径到收敛\).
 * Given a policy $$\pi$$,  evaluate the policy $$v_\pi (s) = E(R_{t+1}+\gamma R_{t+2}+...|S_t=s)$$ and improve the policy by acting greedily with respect to $$v_\pi$$,  $$\pi'=greedy(v_\pi)$$. Do iteration and it always converges to the optimal policy $$\pi^*$$.
-* **\[Proof\]** 1. Consider a deterministic policy $$\pi(s)$$.
+* **\[Proof\]** 
+
+  1. Consider a deterministic policy $$\pi(s)$$.
 
   2. Improve the policy by acting greedily, $$\pi' (s) =argmax_{a \in A} q_\pi (s,a)$$ .
 
@@ -45,7 +47,11 @@
 
 ### 3.4 Value Iteration
 
+* 先将优化问题分解成一系列子问题，take an optimal action and then followed by an optimal policy from the successor state.
 
+  **\[Theorem\]** A policy $$\pi(a|s)$$ achieves the optimal value from state s, $$v_\pi(s)=v_*(s)$$, if and only if for any state s' reachable from s the policy achieves the optimal value from state s'.
 
+* $$v_*(s)=max_{a \in A} R_s^a  + \gamma \sum_{s' \in S} P_{ss'}^av_*(s')$$ . Do iteration.
+* 
 
 
