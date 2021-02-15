@@ -53,7 +53,50 @@
 
 * $$v_*(s)=max_{a \in A} R_s^a  + \gamma \sum_{s' \in S} P_{ss'}^av_*(s')$$ . Do iteration.
 * **Synchronous** backups: at each iteration k+1, for all states, update $$v_{k+1}(s)$$from  $$v_k(s')$$.
-* 区别于policy iteration 使用bellman expectation equation, value iteration 使用bellman optimality equation 进行迭代。policy是隐式方程。intermediate value functions可以不对应任何policy。
-* 
+* 区别于policy iteration 使用Bellman expectation equation, value iteration 使用Bellman optimality equation 进行迭代。policy是隐函数。intermediate value functions可以不对应任何policy。
+* $$v_{k+1}(s)=max_{a \in A} (R_s^a + \gamma \sum_{s' \in S} P_{ss'}^av_k(s'))$$ 矩阵表示 $$v_{k+1}=max_{a \in A} R^a +\gamma P^av_k$$. 从 s 到 a 到 s' 的反向推导过程。
+* 收敛问题见 contraction mapping theorem
+
+### 3.5 Summary
+
+* 问题和对应算法
+  * Prediction -- Bellman expectation equation -- iterative policy evaluation
+  * Control -- Bellman expectation equation + greedy policy improvement -- policy iteration
+  * Control -- Bellman optimality equation -- value iteration
+* 算法复杂度
+  * state-value function v $$O(mn^2)$$ m is the number of actions and n is the number of states.
+  * action-value function q $$O(m^2n^2)$$.
+
+### 3.6 Extensions of DP
+
+* **Asynchronous** DP backs up states individually in any order. 可以节省计算量 只要所有states都陆续选择更新那么收敛。
+  * In-place dynamic programming
+
+    迭代时只储存一组value function $$v(s) \leftarrow max_{a \in A} (R_s^a + \gamma \sum_{s' \in S} P_{ss'}^av(s'))$$ 里面的v都是最新的v
+
+  * Prioritized sweeping
+
+    定义先更新哪个state，选择使得remaining Bellman error最大的\(绝对误差\)
+
+  * Real-time dynamic programming 
+
+    选择states that are relevant to agent 根据agent的经验选择
+* 对比**Synchronous backups** 每次更新所有的states ****储存两组value functions $$v_{new}(s) \leftarrow max_{a \in A} (R_s^a + \gamma \sum_{s' \in S} P_{ss'}^av_{old}(s'))$$ 之后更新v
+* DP uses full-width backups 考虑全部后续actions/states
+
+  DP适合medium size problems \(millions of states\)，对于large size problems 会有curse of dimensionality的问题， even one backup could be very expensive. 所以考虑sample backups.
+
+
+
+
+
+### 
+
+###  
+
+
+
+
+
 
 
