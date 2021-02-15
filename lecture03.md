@@ -81,7 +81,7 @@
   * Real-time dynamic programming 
 
     选择states that are relevant to agent 根据agent的经验选择
-* 对比**Synchronous backups** 每次更新所有的states ****储存两组value functions $$v_{new}(s) \leftarrow max_{a \in A} (R_s^a + \gamma \sum_{s' \in S} P_{ss'}^av_{old}(s'))$$ 之后更新v
+* 对比**Synchronous backups** 每次更新所有的states 储存两组value functions $$v_{new}(s) \leftarrow max_{a \in A} (R_s^a + \gamma \sum_{s' \in S} P_{ss'}^av_{old}(s'))$$ 之后更新v
 * DP uses full-width backups 考虑全部后续actions/states
 
   DP适合medium size problems \(millions of states\)，对于large size problems 会有curse of dimensionality的问题， even one backup could be very expensive. 所以考虑sample backups.
