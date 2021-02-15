@@ -52,6 +52,8 @@
   **\[Theorem\]** A policy $$\pi(a|s)$$ achieves the optimal value from state s, $$v_\pi(s)=v_*(s)$$, if and only if for any state s' reachable from s the policy achieves the optimal value from state s'.
 
 * $$v_*(s)=max_{a \in A} R_s^a  + \gamma \sum_{s' \in S} P_{ss'}^av_*(s')$$ . Do iteration.
+* **Synchronous** backups: at each iteration k+1, for all states, update $$v_{k+1}(s)$$from  $$v_k(s')$$.
+* 区别于policy iteration 使用bellman expectation equation, value iteration 使用bellman optimality equation 进行迭代。policy是隐式方程。intermediate value functions可以不对应任何policy。
 * 
 
 
