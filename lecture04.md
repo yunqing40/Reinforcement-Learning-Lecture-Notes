@@ -16,3 +16,16 @@
 
   区别于first visit MC方法，取所有visit state s的return的均值进行估计。
 
+* Incremental mean$$\mu_k=\sum_{i=1}^kx_i/k=(x_k+\sum_{i=1}^{k-1}x_i)/k=(x_k+(k-1)\mu_{k-1})/k=\mu_{k-1}+(x_k-\mu_{k-1})/k$$ 
+* Incremental Monte Carlo updates
+
+  同上$$N(S_t) \leftarrow N(S_t)+1$$ ,$$V(S_t) \leftarrow V(S_t)+(G_t-V(S_t))/N(S_t)$$.
+
+  在non-stationary的情况下，用$$V(S_t) \leftarrow V(S_t)+(G_t-V(S_t))/\alpha$$ .
+
+### 4.3 Temporal Difference Learning
+
+
+
+
+
